@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Thread } from './Thread';
 import CThread from './Thread';
+import './Threads.css';
 
-function Threads(
+export function Threads(
     { threads, setThreads } : { threads: Thread[]; setThreads: React.Dispatch<React.SetStateAction<Thread[]>>; }
 ){
     const [offset, setOffset] = useState(0);
@@ -13,6 +15,7 @@ function Threads(
 
     async function addThreads({offset, setOffset}: {offset: number; setOffset: React.Dispatch<React.SetStateAction<number>>}) {
         const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads?offset=${offset}`);
+        console.log(`https://railway.bulletinboard.techtrain.dev/threads?offset=${offset}`);
         const data: Thread[] = await response.json();
         setThreads(prevThreads => [...prevThreads, ...data]);
         setOffset(prevOffset => prevOffset + 10);
@@ -20,6 +23,10 @@ function Threads(
 
     return (
         <div>
+            <div className="threads-header">
+                <h2>スレッド一覧</h2>
+                <Link to="/threads/new" className="new-thread-button">新規スレッド作成</Link>
+            </div>
             
             {threads.map((thread) => (
                 <CThread thread={thread}/>
@@ -43,5 +50,3 @@ function Threads(
         </div>
     );
 }
-
-export default Threads;

@@ -1,0 +1,35 @@
+.threads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.threads-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.new-thread-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.new-thread-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: white;
+}
+
+.new-thread-button:active {
+    background-color: #004085;
+}
