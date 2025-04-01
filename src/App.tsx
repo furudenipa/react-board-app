@@ -10,7 +10,7 @@ function App() {
   const [threads, setThreads] = useState<Thread[]>([])
   return (
     <Router>
-      <Header header={'All Threads'} />
+      <Header header={'React Board App'} />
       <Routes>
         <Route path="/threads/new" element={<ThreadNew />} />
         <Route path="/" element={<Threads threads={threads} setThreads={setThreads} />} />

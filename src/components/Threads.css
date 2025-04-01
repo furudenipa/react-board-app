@@ -1,3 +1,8 @@
+.container {
+    align-items: center;
+    padding: 20px;
+}
+
 .threads-header {
     display: flex;
     justify-content: space-between;

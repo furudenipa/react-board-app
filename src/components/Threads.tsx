@@ -22,7 +22,7 @@ export function Threads(
     }
 
     return (
-        <div>
+        <div className="container">
             <div className="threads-header">
                 <h2>スレッド一覧</h2>
                 <Link to="/threads/new" className="new-thread-button">新規スレッド作成</Link>
